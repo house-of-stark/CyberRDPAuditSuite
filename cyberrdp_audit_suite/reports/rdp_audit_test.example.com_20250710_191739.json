@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "release_date": "2025-06-24",
+    "target": "test.example.com",
+    "port": 3389,
+    "start_time": "2025-07-10T19:17:39.599238",
+    "end_time": "2025-07-10T19:17:39.599285",
+    "duration_seconds": 4.7e-05,
+    "modules_executed": [
+      "MagicMock"
+    ]
+  },
+  "results": {
+    "MagicMock": {
+      "status": "PASSED",
+      "details": {
+        "port_status": "open"
+      }
+    }
+  },
+  "vulnerabilities": [],
+  "summary": {
+    "tests_run": 1,
+    "tests_passed": 1,
+    "tests_failed": 0,
+    "vulnerabilities_found": 0,
+    "critical_vulnerabilities": 0,
+    "high_vulnerabilities": 0,
+    "medium_vulnerabilities": 0,
+    "low_vulnerabilities": 0
+  }
+}

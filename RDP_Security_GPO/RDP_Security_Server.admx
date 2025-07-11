@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="rdpsec" namespace="Microsoft.Policies.RDPSecurity" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="RDPServer" displayName="$(string.RDPServer)">
+      <parentCategory ref="Windows Components\Remote Desktop Services" />
+    </category>
+  </categories>
+  <policies>
+    <!-- Authentication -->
+    <policy name="RequireUserAuthentication" class="Machine" displayName="$(string.RequireUserAuthentication)" explainText="$(string.RequireUserAuthentication_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="UserAuthentication">
+      <parentCategory ref="RDPServer" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Encryption -->
+    <policy name="SetClientConnectionEncryptionLevel" class="Machine" displayName="$(string.SetClientConnectionEncryptionLevel)" explainText="$(string.SetClientConnectionEncryptionLevel_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="MinEncryptionLevel">
+      <parentCategory ref="RDPServer" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="3" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="1" />
+      </disabledValue>
+    </policy>
+
+    <!-- Session Timeouts -->
+    <policy name="MaxIdleTime" class="Machine" displayName="$(string.MaxIdleTime)" explainText="$(string.MaxIdleTime_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="MaxIdleTime">
+      <parentCategory ref="RDPServer" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="900000" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="MaxConnectionTime" class="Machine" displayName="$(string.MaxConnectionTime)" explainText="$(string.MaxConnectionTime_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="MaxConnectionTime">
+      <parentCategory ref="RDPServer" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="14400000" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Device Redirection -->
+    <policy name="DisableClipboardRedirection" class="Machine" displayName="$(string.DisableClipboardRedirection)" explainText="$(string.DisableClipboardRedirection_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisableClip">
+      <parentCategory ref="RDPServer" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Security Layer -->
+    <policy name="SecurityLayer" class="Machine" displayName="$(string.SecurityLayer)" explainText="$(string.SecurityLayer_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="SecurityLayer">
+      <parentCategory ref="RDPServer" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="2" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

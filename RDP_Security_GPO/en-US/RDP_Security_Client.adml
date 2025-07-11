@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>RDP Client Security Settings</displayName>
+  <description>Group Policy settings for securing RDP client connections</description>
+  <resources>
+    <stringTable>
+      <!-- Categories -->
+      <string id="RDPClient">RDP Security - Client Settings</string>
+      
+      <!-- Password Saving -->
+      <string id="DisablePasswordSaving">Do not allow passwords to be saved</string>
+      <string id="DisablePasswordSaving_Help">This policy setting prevents users from saving passwords for Remote Desktop connections. If you enable this setting, the password saving checkbox in the Remote Desktop Connection dialog box is disabled, and users cannot save passwords.</string>
+      
+      <!-- Credential Prompting -->
+      <string id="PromptForCredentials">Prompt for credentials on client computer</string>
+      <string id="PromptForCredentials_Help">This policy setting allows you to configure the Remote Desktop client to always prompt for credentials, even if the connection is configured to save credentials.</string>
+      
+      <!-- Device Redirection -->
+      <string id="DisableDriveRedirection">Do not allow drive redirection</string>
+      <string id="DisableDriveRedirection_Help">This policy setting prevents users from sharing the local drives on their client computers in Remote Desktop sessions. Mapped drives in the remote session will not be redirected to the user's local computer.</string>
+      
+      <string id="DisablePrinterRedirection">Do not allow printer redirection</string>
+      <string id="DisablePrinterRedirection_Help">This policy setting prevents users from redirecting print jobs from the remote computer to a local printer attached to their client computer.</string>
+      
+      <!-- Security Settings -->
+      <string id="EnableCredSSP">Allow delegating default credentials with NTLM-only server authentication</string>
+      <string id="EnableCredSSP_Help">This policy setting allows users to use default credentials for server authentication when connecting to servers that only support NTLM authentication. Use with caution as this may expose credentials to the remote server.</string>
+      
+      <!-- RemoteFX Settings -->
+      <string id="DisableRemoteFX">Disable RemoteFX for Remote Desktop Services</string>
+      <string id="DisableRemoteFX_Help">This policy setting allows you to disable RemoteFX for Remote Desktop Services sessions. Disabling RemoteFX may improve security by reducing the attack surface, but may impact user experience for multimedia applications.</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

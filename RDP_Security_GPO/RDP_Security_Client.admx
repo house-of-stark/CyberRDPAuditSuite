@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="rdpclient" namespace="Microsoft.Policies.RDPClient" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="RDPClient" displayName="$(string.RDPClient)">
+      <parentCategory ref="Windows Components\Remote Desktop Services\Remote Desktop Connection Client" />
+    </category>
+  </categories>
+  <policies>
+    <!-- Password Saving -->
+    <policy name="DisablePasswordSaving" class="User" displayName="$(string.DisablePasswordSaving)" explainText="$(string.DisablePasswordSaving_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="DisablePasswordSaving">
+      <parentCategory ref="RDPClient" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Credential Prompting -->
+    <policy name="PromptForCredentials" class="User" displayName="$(string.PromptForCredentials)" explainText="$(string.PromptForCredentials_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="PromptForCredentials">
+      <parentCategory ref="RDPClient" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Device Redirection -->
+    <policy name="DisableDriveRedirection" class="User" displayName="$(string.DisableDriveRedirection)" explainText="$(string.DisableDriveRedirection_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisableCdm">
+      <parentCategory ref="RDPClient" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <policy name="DisablePrinterRedirection" class="User" displayName="$(string.DisablePrinterRedirection)" explainText="$(string.DisablePrinterRedirection_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisablePrinterRedirection">
+      <parentCategory ref="RDPClient" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Security Settings -->
+    <policy name="EnableCredSSP" class="User" displayName="$(string.EnableCredSSP)" explainText="$(string.EnableCredSSP_Help)" key="SOFTWARE\Policies\Microsoft\Windows\CredentialsDelegation" valueName="AllowDefaultCredentials">
+      <parentCategory ref="RDPClient" />
+      <supportedOn ref="windows:SUPPORTED_WindowsVista" />
+      <enabledValue>
+        <string>1</string>
+      </enabledValue>
+      <disabledValue>
+        <string>0</string>
+      </disabledValue>
+    </policy>
+
+    <!-- RemoteFX Settings -->
+    <policy name="DisableRemoteFX" class="User" displayName="$(string.DisableRemoteFX)" explainText="$(string.DisableRemoteFX_Help)" key="SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" valueName="fDisableRemoteFX">
+      <parentCategory ref="RDPClient" />
+      <supportedOn ref="windows:SUPPORTED_Windows7" />
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+  </policies>
+</policyDefinitions>

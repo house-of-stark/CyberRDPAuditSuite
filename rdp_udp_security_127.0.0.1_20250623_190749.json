@@ -1,0 +1,21 @@
+{
+    "target": "127.0.0.1",
+    "port": 3389,
+    "timestamp": "2025-06-23T23:07:44.429870",
+    "udp_enabled": false,
+    "udp_security_level": null,
+    "vulnerabilities": [],
+    "recommendations": [
+        "UDP transport is disabled which reduces attack surface - maintain this configuration"
+    ],
+    "tests": {},
+    "start_time": "2025-06-23T23:07:44.429938",
+    "end_time": "2025-06-23T23:07:49.483763",
+    "duration_seconds": 5.053825,
+    "summary": {
+        "tests_run": 0,
+        "tests_passed": 0,
+        "tests_failed": 0,
+        "vulnerabilities_found": 0
+    }
+}

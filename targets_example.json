@@ -1,0 +1,20 @@
+[
+  {
+    "target": "rdp-host-01.example.com",
+    "port": 3389,
+    "username": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD"
+  },
+  {
+    "target": "rdp-host-02.example.com",
+    "port": 3389,
+    "username": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD"
+  },
+  {
+    "target": "rdp-host-03.example.com",
+    "port": 3389,
+    "username": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD"
+  }
+]

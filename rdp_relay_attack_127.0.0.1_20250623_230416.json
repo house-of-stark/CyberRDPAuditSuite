@@ -1,0 +1,76 @@
+{
+    "target": "127.0.0.1",
+    "port": 3389,
+    "timestamp": "2025-06-23T23:04:16.100775",
+    "tests": {
+        "restricted_admin_mode": {
+            "test": "restricted_admin_mode",
+            "description": "Checks if Restricted Admin Mode is enabled, which helps prevent credential relay",
+            "status": "error",
+            "findings": [
+                "Could not determine Restricted Admin Mode status: [23:04:16:127] [164418:164419] [ERROR][com.freerdp.core] - freerdp_connect:freerdp_set_last_error_ex ERRCONNECT_PRE_CONNECT_FAILED [0x00020001]\n[23:04:16:127] [164418:164419] [ERROR][com.freerdp.core] - freerdp_pre_connect failed\n"
+            ],
+            "vulnerable": true
+        },
+        "nla_required": {
+            "test": "nla_required",
+            "description": "Checks if Network Level Authentication is required, which helps prevent relay attacks",
+            "status": "error",
+            "findings": [
+                "Could not determine NLA status: [23:04:16:144] [164420:164421] [ERROR][com.freerdp.core] - freerdp_connect:freerdp_set_last_error_ex ERRCONNECT_PRE_CONNECT_FAILED [0x00020001]\n[23:04:16:144] [164420:164421] [ERROR][com.freerdp.core] - freerdp_pre_connect failed\n"
+            ],
+            "vulnerable": true
+        },
+        "credential_guard": {
+            "test": "credential_guard",
+            "description": "Checks if Windows Credential Guard is enabled, which prevents credential extraction",
+            "status": "skipped",
+            "findings": [
+                "Skipped test - requires WinRM and credentials"
+            ],
+            "vulnerable": true
+        },
+        "rdp_security_layer": {
+            "test": "rdp_security_layer",
+            "description": "Checks if RDP security layer is configured securely, which helps prevent relay attacks",
+            "status": "skipped",
+            "findings": [
+                "Skipped test - requires WinRM and credentials"
+            ],
+            "vulnerable": true
+        }
+    },
+    "vulnerable_to_relay": true,
+    "findings": [
+        "Could not determine Restricted Admin Mode status: [23:04:16:080] [164413:164414] [ERROR][com.freerdp.core] - freerdp_connect:freerdp_set_last_error_ex ERRCONNECT_PRE_CONNECT_FAILED [0x00020001]\n[23:04:16:080] [164413:164414] [ERROR][com.freerdp.core] - freerdp_pre_connect failed\n",
+        "Could not determine NLA status: [23:04:16:095] [164415:164416] [ERROR][com.freerdp.core] - freerdp_connect:freerdp_set_last_error_ex ERRCONNECT_PRE_CONNECT_FAILED [0x00020001]\n[23:04:16:095] [164415:164416] [ERROR][com.freerdp.core] - freerdp_pre_connect failed\n",
+        "Skipped test - requires WinRM and credentials",
+        "Skipped test - requires WinRM and credentials",
+        "Could not determine Restricted Admin Mode status: [23:04:16:127] [164418:164419] [ERROR][com.freerdp.core] - freerdp_connect:freerdp_set_last_error_ex ERRCONNECT_PRE_CONNECT_FAILED [0x00020001]\n[23:04:16:127] [164418:164419] [ERROR][com.freerdp.core] - freerdp_pre_connect failed\n",
+        "Could not determine NLA status: [23:04:16:144] [164420:164421] [ERROR][com.freerdp.core] - freerdp_connect:freerdp_set_last_error_ex ERRCONNECT_PRE_CONNECT_FAILED [0x00020001]\n[23:04:16:144] [164420:164421] [ERROR][com.freerdp.core] - freerdp_pre_connect failed\n",
+        "Skipped test - requires WinRM and credentials",
+        "Skipped test - requires WinRM and credentials"
+    ],
+    "recommendations": [
+        "Enable Restricted Admin Mode to prevent credential theft via relay attacks.",
+        "To enable: Set 'Restrict delegation of credentials to remote servers' to 'Enabled' in Group Policy.",
+        "Reference: https://docs.microsoft.com/en-us/windows/security/identity-protection/remote-credential-guard",
+        "Enforce Network Level Authentication (NLA) to prevent relay attacks.",
+        "To enable: Set 'Require user authentication for remote connections by using Network Level Authentication' to 'Enabled' in Group Policy.",
+        "Reference: https://docs.microsoft.com/en-us/windows/security/remote-management/winrm/winrm-security",
+        "Enable Windows Defender Credential Guard to protect against credential theft.",
+        "To enable: Use Group Policy or Device Guard and Credential Guard hardware readiness tool.",
+        "Reference: https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard",
+        "Configure RDP to use TLS 1.2 or higher for all RDP connections.",
+        "To configure: Set 'Require use of specific security layer for remote (RDP) connections' to 'SSL (TLS 1.0)' or higher in Group Policy.",
+        "Reference: https://docs.microsoft.com/en-us/windows/security/remote-management/remote-desktop/rdp-security"
+    ],
+    "tests_run": 2,
+    "tests_passed": 0,
+    "tests_failed": 0,
+    "execution_summary": {
+        "start_time": "2025-06-23T23:04:16.230490",
+        "end_time": "2025-06-23T23:04:16.278239",
+        "duration_seconds": 0.047749
+    }
+}

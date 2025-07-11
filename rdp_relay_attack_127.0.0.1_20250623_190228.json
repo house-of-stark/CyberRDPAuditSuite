@@ -1,0 +1,52 @@
+{
+    "target": "127.0.0.1",
+    "port": 3389,
+    "timestamp": "2025-06-23T19:02:28.456693",
+    "tests": {
+        "restricted_admin_mode": {
+            "test": "restricted_admin_mode",
+            "description": "Checks if Restricted Admin Mode is enabled, which helps prevent credential relay",
+            "status": "error",
+            "findings": [
+                "Error: [Errno 2] No such file or directory: 'xfreerdp'"
+            ],
+            "vulnerable": true
+        },
+        "nla_required": {
+            "test": "nla_required",
+            "description": "Checks if Network Level Authentication is required, which helps prevent relay attacks",
+            "status": "error",
+            "findings": [
+                "Error: [Errno 2] No such file or directory: 'xfreerdp'"
+            ],
+            "vulnerable": true
+        },
+        "credential_guard": {
+            "test": "credential_guard",
+            "description": "Checks if Windows Credential Guard is enabled, which prevents credential extraction",
+            "status": "skipped",
+            "findings": [
+                "Skipped test - requires WinRM and credentials"
+            ],
+            "vulnerable": true
+        },
+        "rdp_security_layer": {
+            "test": "rdp_security_layer",
+            "description": "Checks if RDP security layer is configured securely, which helps prevent relay attacks",
+            "status": "skipped",
+            "findings": [
+                "Skipped test - requires WinRM and credentials"
+            ],
+            "vulnerable": true
+        }
+    },
+    "vulnerable_to_relay": true,
+    "findings": [],
+    "recommendations": [],
+    "summary": {
+        "tests_run": 2,
+        "tests_passed": 0,
+        "tests_failed": 0,
+        "vulnerable_to_relay": true
+    }
+}

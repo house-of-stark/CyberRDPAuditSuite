@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>RDP Security Settings</displayName>
+  <description>Group Policy settings for securing RDP server connections</description>
+  <resources>
+    <stringTable>
+      <!-- Categories -->
+      <string id="RDPServer">RDP Security - Server Settings</string>
+      
+      <!-- Authentication -->
+      <string id="RequireUserAuthentication">Require user authentication for remote connections by using Network Level Authentication</string>
+      <string id="RequireUserAuthentication_Help">This policy setting allows you to specify whether Remote Desktop Services requires user authentication for remote connections by using Network Level Authentication. Network Level Authentication completes user authentication before the remote desktop connection is established.</string>
+      
+      <!-- Encryption -->
+      <string id="SetClientConnectionEncryptionLevel">Set client connection encryption level</string>
+      <string id="SetClientConnectionEncryptionLevel_Help">This policy setting specifies whether to require the use of a specific encryption level to secure communications between client computers and RD Session Host servers during Terminal Services connections.</string>
+      
+      <!-- Timeouts -->
+      <string id="MaxIdleTime">Set time limit for active but idle Remote Desktop Services sessions</string>
+      <string id="MaxIdleTime_Help">This policy setting allows you to specify the maximum amount of time that an active Remote Desktop Services session can be idle (without user input) before it is automatically disconnected or ended.</string>
+      
+      <string id="MaxConnectionTime">Set time limit for active Remote Desktop Services sessions</string>
+      <string id="MaxConnectionTime_Help">This policy setting allows you to specify the maximum amount of time that a Remote Desktop Services session can be active before it is automatically disconnected or ended.</string>
+      
+      <!-- Device Redirection -->
+      <string id="DisableClipboardRedirection">Do not allow clipboard redirection</string>
+      <string id="DisableClipboardRedirection_Help">This policy setting specifies whether to prevent the sharing of clipboard contents (clipboard redirection) between a remote computer and a client computer during a Remote Desktop Services session.</string>
+      
+      <!-- Security Layer -->
+      <string id="SecurityLayer">Require use of specific security layer for remote (RDP) connections</string>
+      <string id="SecurityLayer_Help">This policy setting specifies whether to require the use of a specific security layer to secure communications between client computers and RD Session Host servers during Remote Desktop Protocol (RDP) connections.</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

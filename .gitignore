@@ -49,6 +49,8 @@ ENV/
 # Test and analysis results
 analysis_results/*
 !analysis_results/README.md
+analysis/*
+!analysis/README.md
 
 # Reports
 reports/*
@@ -57,6 +59,10 @@ reports/*
 # Test reports
 test_reports/*
 !test_reports/README.md
+
+# Captures
+captures/*
+!captures/README.md
 
 # Local development
 .env

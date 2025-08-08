@@ -1,0 +1,42 @@
+# Dependencies for verifying the CyberRDP Audit Suite
+# Core dependencies
+python-nmap>=0.7.1
+impacket>=0.9.22
+paramiko>=2.7.2
+scapy>=2.4.5
+cryptography>=3.3.1
+pyOpenSSL>=20.0.0
+requests>=2.25.1
+colorama>=0.4.4
+python-dotenv>=0.15.0
+
+# Testing dependencies
+pytest>=6.2.2
+pytest-cov>=2.11.1
+pytest-mock>=3.5.1
+
+# Development tools
+black>=21.5b2
+flake8>=3.9.1
+mypy>=0.812
+isort>=5.8.0
+
+# Documentation
+sphinx>=3.5.3
+sphinx-rtd-theme>=0.5.1
+
+# Additional utilities
+tqdm>=4.56.0
+pyyaml>=5.4.1
+pandas>=1.2.3
+numpy>=1.20.2
+matplotlib>=3.3.4
+
+# Security tools
+cryptography>=3.4.7
+pycryptodome>=3.10.1
+
+# Network tools
+dnspython>=2.1.0
+ldap3>=2.8.1
+pyasn1>=0.4.8

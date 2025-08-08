@@ -10,7 +10,6 @@ We actively support the latest release on the `main` branch.
 
 - Please report vulnerabilities privately via GitHub Security Advisories:
   - [Report via GitHub Security Advisories](https://github.com/house-of-stark/CyberRDPAuditSuite/security/advisories/new)
-- Alternatively, you can email: [security@example.com](mailto:security@example.com)
 - Do not open public issues for security reports.
 - We will acknowledge receipt within 3 business days and aim to provide a timeline for remediation.
 

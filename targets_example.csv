@@ -1,4 +1,4 @@
 target,port,username,password
-192.168.1.100,3389,admin,password123
-192.168.1.101,3389,user1,password456
-192.168.1.102,3389,admin2,password789
+192.168.1.100,3389,admin,<password>
+192.168.1.101,3389,user1,<password>
+192.168.1.102,3389,admin2,<password>
